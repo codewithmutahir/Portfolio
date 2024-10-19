@@ -11,7 +11,7 @@ const About = () => {
     },
     {
       label: "Years of experience",
-      number: 10,
+      number: 2,
     },
   ];
 
