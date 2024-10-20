@@ -35,15 +35,15 @@ const sitemap = [
 const socials = [
   {
     label: "GitHub",
-    href: "https://www.github.com/codewithsadee-org",
+    href: "https://www.github.com/codewithmutahir",
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/codewithsadee",
+    href: "https://www.linkedin.com/in/mutahirhussain",
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/codewithsadee",
+    href: "https://www.instagram.com/whoissmut4hir",
   }
 ];
 
@@ -120,7 +120,7 @@ const Footer = () => {
 
             <p className="text-zinc-500 text-sm">
                 &copy; 2024 <span className="text-zinc-200 reveal-up">
-                    codewithmutahir
+                    <a href="/">codewithmutahir</a>
                 </span>
             </p>
         </div>
