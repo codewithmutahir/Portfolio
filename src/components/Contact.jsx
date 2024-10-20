@@ -3,6 +3,15 @@
  *  @license   Apache-2.0
  */
 
+/**
+ * Components
+ */
+
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button"
+
+
 const socialLinks = [
   {
     href: "https://www.github.com/codewithmutahir",
@@ -63,78 +72,95 @@ const socialLinks = [
 const Contact = () => {
   return (
     <section id="contact" className="section">
-
       <div className="container lg:grid lg:grid-cols-2 lg:items-stretch">
-
         <div className="mb-12 lg:mb-0 lg:flex lg:flex-col">
-        <h2 className="headline-2 lg:max-w-[12ch] reveal-up
-        ">Contact me for Collaboration</h2>
+          <h2
+            className="headline-2 lg:max-w-[12ch] reveal-up
+        "
+          >
+            Contact me for Collaboration
+          </h2>
 
-        <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch] lg:max-w-[30]">
-          Reach out today to discuss your project needs and start collaborating
-          on something amazing!
-        </p>
+          <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch] lg:max-w-[30]">
+            Reach out today to discuss your project needs and start
+            collaborating on something amazing!
+          </p>
 
-        <div className="flex items-center gap-2 mt-auto">
-          {socialLinks.map(({ href, icon }, key) => (
-            <a key={key} href={href} target="_blank" className="w-12 h-12 grid place-items-center ring-inset ring-2 ring-zinc-50/5 rounded-lg transition-[background-color,color] hover:bg-zinc-50 hover:text-zinc-950 active:bg-zinc-50/80 reveal-up">
-              {icon}
-            </a>
-          ))}
+          <div className="flex items-center gap-2 mt-auto">
+            {socialLinks.map(({ href, icon }, key) => (
+              <a
+                key={key}
+                href={href}
+                target="_blank"
+                className="w-12 h-12 grid place-items-center ring-inset ring-2 ring-zinc-50/5 rounded-lg transition-[background-color,color] hover:bg-zinc-50 hover:text-zinc-950 active:bg-zinc-50/80 reveal-up"
+              >
+                {icon}
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
 
-      <form 
-      action="https://getform.io/f/bvrevdvb"
-      method="POST"
-      className="xl:pl-10 2xl:pl-20"
-      >
-
-        <div className="md:grid md:items-center md:grid-cols-2 md:gap-2">
-
+        <form
+          action="https://getform.io/f/bvrevdvb"
+          method="POST"
+          className="xl:pl-10 2xl:pl-20"
+        >
+          <div className="md:grid md:items-center md:grid-cols-2 md:gap-2">
             <div className="mb-4">
-                <label htmlFor="name" className="label reveal-up">
-                    Name
-                </label>
+              <label htmlFor="name" className="label reveal-up">
+                Name
+              </label>
 
-                <input 
+              {/* <input 
                 type="text"
                 name="name"
                 id="name"
                 autoComplete="name"
                 required
                 placeholder="Mutahir Hussain"
-                className="text-field reveal-up" />
+                className="text-field reveal-up" /> */}
+              <Input
+                type="name"
+                placeholder="Mutahir Hussain"
+                name="name"
+                id="name"
+                autoComplete="name"
+                required
+                className="text-field reveal-up"
+              />
             </div>
 
             <div className="mb-4">
-                <label htmlFor="email" className="label reveal-up">
-                    Email
-                </label>
+              <label htmlFor="email" className="label reveal-up">
+                Email
+              </label>
 
-                <input 
+              {/* <input 
                 type="email"
                 name="email"
                 id="email"
                 autoComplete="email"
                 required
                 placeholder="mutahir@example.com"
-                className="text-field reveal-up" />
+                className="text-field reveal-up" /> */}
+              <Input
+                type="email"
+                placeholder="mutahir@example.com"
+                name="email"
+                id="email"
+                autoComplete="email"
+                required
+                className="text-field reveal-up"
+              />
             </div>
+          </div>
 
-            
-
-        </div>
-
-        <div className="mb-4">
-            <label 
-            htmlFor="message"
-            className="label reveal-up"
-            >
-                Message
+          <div className="mb-4">
+            <label htmlFor="message" className="label reveal-up">
+              Message
             </label>
 
-            <textarea 
+            {/* <textarea 
             name="message"
             id="message" 
             placeholder="Hi!"
@@ -142,18 +168,28 @@ const Contact = () => {
             className="text-field resize-y min-h-32 max-h-80 reveal-up"
             >
 
-            </textarea>
+            </textarea> */}
 
-        </div>
+            <Textarea
+            placeholder="Type your message here..."
+            name="message"
+            id="message" 
+            required
+            className="text-field resize-y min-h-32 max-h-80 reveal-up"
+             />
+          </div>
 
-        <button 
-        type="submit"
-        className="btn btn-primary [&]:max-w-full w-full justify-center reveal-up">
+          {/* <button
+            type="submit"
+            className="btn btn-primary [&]:max-w-full w-full justify-center reveal-up"
+          >
             Submit
-        </button>
+          </button> */}
 
-      </form>
+          <Button variant="ghost" type="submit"
+            className="btn btn-primary [&]:max-w-full w-full justify-center reveal-up">Button</Button>
 
+        </form>
       </div>
     </section>
   );
