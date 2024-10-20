@@ -179,13 +179,6 @@ const Contact = () => {
              />
           </div>
 
-          {/* <button
-            type="submit"
-            className="btn btn-primary [&]:max-w-full w-full justify-center reveal-up"
-          >
-            Submit
-          </button> */}
-
           <Button variant="ghost" type="submit"
             className="btn btn-primary [&]:max-w-full w-full justify-center reveal-up">Button</Button>
 
