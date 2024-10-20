@@ -179,7 +179,7 @@ const Contact = () => {
              />
           </div>
 
-          <Button variant="ghost" type="submit"
+          <Button variant="default" type="submit"
             className="btn btn-primary [&]:max-w-full w-full justify-center reveal-up">Button</Button>
 
         </form>
