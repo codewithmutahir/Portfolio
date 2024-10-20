@@ -13,6 +13,7 @@ import { useState } from "react";
 COMPONENTS
 */
 import Navbar from "./Navbar";
+import { ModeToggle } from "./mode-toggle";
 
 
 const Header = () => {
@@ -32,15 +33,20 @@ const Header = () => {
           </a>
         </h1>
 
+
         <div className="relative md:justify-self-center">
+        <div className="grid grid-cols-2 gap-2">
+        <ModeToggle/>
           <button className="menu-btn md:hidden" onClick={() => setNavOpen((prev) => !prev)}>
             <span className="material-symbols-rounded">
             {navOpen ? 'close' : 'menu'}
                 </span>
           </button>
+        </div>
 
           <Navbar navOpen={navOpen}/>
         </div>
+
 
         <a href="#contact" 
         className="btn btn-secondary max-md:hidden md:justify-self-end"

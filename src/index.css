@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  @apply bg-zinc-900 text-zinc-50;
+  @apply  text-zinc-50;
 }
 
 /* ----------------------------------- *\
@@ -203,4 +203,22 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Default Light Theme */
+:root {
+  --background-color: #ffffff; /* Light background */
+  --text-color: #000000; /* Light text color */
+}
+
+/* Dark Theme */
+html.dark {
+  --background-color: #121212; /* Dark background */
+  --text-color: #e0e0e0; /* Dark text color */
+}
+
+/* Apply the variables */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
