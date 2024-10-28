@@ -13,7 +13,7 @@ import PropTypes from "prop-types";
  * Primary Button
  */
 
-const ButtonPrimary = ({ href, target = "_self", label, icon, classes = "" }) => {
+const ButtonPrimary = ({ href, target = "_self", label, icon, classes  }) => {
     if(href){
         return(
             <a 
@@ -33,7 +33,7 @@ const ButtonPrimary = ({ href, target = "_self", label, icon, classes = "" }) =>
         )
     }else{
         return(
-            <button className={"btn btn-primary" + classes}>
+            <button className={"btn btn-primary " + classes}>
                 {label}
 
                 {icon ?

@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 /* ----------------------------------- *\
 /* BASE */
 /*----------------------------------- */
@@ -207,8 +208,16 @@ body {
 
 /* Default Light Theme */
 :root {
-  --background-color: #ffffff; /* Light background */
+  --background-color: #f1f1f1; /* Light background */
   --text-color: #000000; /* Light text color */
+  
+}
+
+:root.headline-1,
+.headline-2 {
+  background: -webkit-linear-gradient(0deg, #a1a1aa, #1c1c1e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Dark Theme */
@@ -217,8 +226,3 @@ html.dark {
   --text-color: #e0e0e0; /* Dark text color */
 }
 
-/* Apply the variables */
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
