@@ -36,7 +36,6 @@ const Header = () => {
 
         <div className="relative md:justify-self-center">
         <div className="grid grid-cols-2 gap-2">
-        <ModeToggle/>
           <button className="menu-btn md:hidden" onClick={() => setNavOpen((prev) => !prev)}>
             <span className="material-symbols-rounded">
             {navOpen ? 'close' : 'menu'}

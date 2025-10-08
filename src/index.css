@@ -15,6 +15,13 @@ body {
   @apply  text-zinc-50;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 /* ----------------------------------- *\
 /* TYPOGRAPHY */
 /*----------------------------------- */
@@ -170,7 +177,7 @@ body {
     --radius: 0.5rem;
   }
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 240, 4%, 10%;
     --foreground: 210 40% 98%;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
@@ -215,14 +222,14 @@ body {
 
 :root.headline-1,
 .headline-2 {
-  background: -webkit-linear-gradient(0deg, #a1a1aa, #1c1c1e);
+  background: -webkit-linear-gradient(0deg, #a1a1aa, #2c2c2e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* Dark Theme */
 html.dark {
-  --background-color: #121212; /* Dark background */
+  --background-color: #18181B; /* Dark background */
   --text-color: #e0e0e0; /* Dark text color */
 }
 

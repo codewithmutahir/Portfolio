@@ -120,7 +120,7 @@ const Contact = () => {
                 placeholder="Mutahir Hussain"
                 className="text-field reveal-up" /> */}
               <Input
-                type="name"
+                type="text"
                 placeholder="Mutahir Hussain"
                 name="name"
                 id="name"
@@ -180,7 +180,7 @@ const Contact = () => {
           </div>
 
           <Button variant="default" type="submit"
-            className="btn btn-primary [&]:max-w-full w-full justify-center reveal-up">Button</Button>
+            className="btn btn-primary [&]:max-w-full w-full justify-center reveal-up">Submit Your Inquiry </Button>
 
         </form>
       </div>

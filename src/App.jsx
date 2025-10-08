@@ -4,7 +4,7 @@
  */
 
 /** Node modules */
-import { ReactLenis, useLenis } from "lenis/react";
+import { ReactLenis } from "lenis/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -27,6 +27,7 @@ import Work from "./components/Work";
 import Reviews from "./components/Reviews";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Background from "./components/Background";
 
 const App = () => {
   useGSAP(() => {
@@ -36,7 +37,7 @@ const App = () => {
       gsap.to(element, {
         scrollTrigger: {
           trigger: element,
-          start: "-200 bottom",
+          start: "-50 bottom",
           end: "bottom 80%",
           scrub: true,
         },

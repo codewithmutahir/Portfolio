@@ -7,9 +7,14 @@
  * Components
  */
 
-import { ButtonPrimary,ButtonOutline } from "./Button";
+import { ButtonPrimary, ButtonOutline } from "./Button";
+import BlurText from "../components/BlurText";
 
 const Hero = () => {
+  const handleAnimationComplete = () => {
+    console.log("Animation completed!");
+  };
+
   return (
     <section id="home" className="pt-28 lg:pt-36">
       <div className="container lg:grid lg:grid-cols-2 items-center lg:gap-10">
@@ -25,6 +30,7 @@ const Hero = () => {
               />
             </figure>
 
+
             <div className="flex items-center gap-1.5 text-zinc-400 text-sm tracking-wide">
               <span className="relative w-2 h-2 rounded-full bg-emerald-400">
                 <span className="absolute inset-0 rounded-full bg-emerald-400 animate-ping"></span>
@@ -33,22 +39,28 @@ const Hero = () => {
             </div>
           </div>
 
-          <h2 className="headline-1 max-w-[15ch] sm:max-w-[20ch] lg:max-w-[15ch] mt-5 mb-8 lg:mb-10">
-            Building Scalable Modern Websites for the Future
-          </h2>
+          <BlurText
+            text="Building Scalable Modern Websites for the Future"
+            delay={150}
+            animateBy="words"
+            direction="top"
+            onAnimationComplete={handleAnimationComplete}
+            className="font-semibold text-5xl max-w-[15ch] sm:max-w-[20ch] lg:max-w-[15ch] mt-5 mb-8 lg:mb-10"
+          />
 
           <div className="flex items-center gap-3 ">
             <ButtonPrimary
-            label="Download CV"
-            icon="download"
-            href="/resume/Resume.pdf"
-            target="_blank"
-             />
+              label="Download CV"
+              icon="download"
+              href="/resume/Resume.pdf"
+              target="_blank"
+            />
 
-            <ButtonOutline 
-            href="#about"
-            label="Scroll down"
-            icon="arrow_downward" />
+            <ButtonOutline
+              href="#about"
+              label="Scroll down"
+              icon="arrow_downward"
+            />
           </div>
         </div>
 
