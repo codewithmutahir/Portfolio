@@ -14,8 +14,26 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Middleware
-app.use(cors());
+// CORS configuration - allow frontend URL in production
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:3000',
+  process.env.FRONTEND_URL,
+].filter(Boolean);
+
+app.use(cors({
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.includes(origin) || process.env.NODE_ENV !== 'production') {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+}));
 app.use(express.json());
 
 // Chat API Proxy Endpoint
@@ -75,7 +93,11 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Chat API server is running' });
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Chat API server running on http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 Chat API server running on port ${PORT}`);
+  console.log(`📍 Environment: ${process.env.NODE_ENV || 'development'}`);
+  if (process.env.FRONTEND_URL) {
+    console.log(`🔗 Frontend URL: ${process.env.FRONTEND_URL}`);
+  }
 });
 
