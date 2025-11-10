@@ -131,7 +131,7 @@ const Skill = () => {
         </p>
 
         <div className="reveal-up">
-          <LogoLoop logos={skillLogos} speed={60} className="py-8" />
+          <LogoLoop logos={skillLogos} speed={120} className="py-8" />
         </div>
 
       </div>
