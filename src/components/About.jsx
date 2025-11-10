@@ -11,20 +11,24 @@ const About = () => {
     },
     {
       label: "Years of experience",
-      number: 2,
+      number: 3,
     },
   ];
 
   return (
     <section id="about" className="section">
       <div className="container">
-        <div className="bg-zinc-800/50 p-7 rounded-2xl md:p-12 reveal-up">
-          <p className="text-zinc-300 mb-4 md:mb-8 md:text-xl md:max-w-[60ch]">
-            Greetings! I&apos;m Mutahir Hussain, a skilled web developer with an obsession
-            for creating aesthetically magnificent and incredibly useful
-            websites. combining technological know-how with inventiveness. I
-            turn your idea into a digital masterpiece that is exceptional in
-            terms of both look and functionality.
+        <div className="bg-zinc-100/80 dark:bg-zinc-800/50 p-7 rounded-2xl md:p-12 reveal-up ring-1 ring-zinc-300/50 dark:ring-zinc-50/5 shadow-sm dark:shadow-none">
+          <p className="text-zinc-700 dark:text-zinc-300 mb-4 md:mb-8 md:text-xl md:max-w-[60ch]">
+            Hello! I&apos;m Mutahir Hussain, a passionate Web & Mobile App Developer
+            specializing in crafting scalable, visually engaging, and
+            high-performing websites. With strengths in React, React Native, Next.js,
+            JavaScript, TypeScript, Node.js, and UI/UX design using Figma, I
+            combine creativity with deep technical expertise to deliver seamless
+            user experiences. From elegant front-end interfaces with Tailwind
+            CSS and CSS3 to robust back-end solutions utilizing Express,
+            MongoDB, Firebase, MySQL, and WordPress, I bring ideas to life—ensuring every project is
+            both beautiful and functionally exceptional.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 md:gap-7">
@@ -39,7 +43,9 @@ const About = () => {
                   </span>
                 </div>
 
-                <p className="text-sm text-zinc-400 ">{label}</p>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400 ">
+                  {label}
+                </p>
               </div>
             ))}
 

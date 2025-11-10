@@ -11,7 +11,8 @@ import PropTypes from "prop-types";
 
 const ProjectCard = ({ imgSrc, title, projectLink, tags, classes}) => {
   return (
-    <div className={"relative p-4 rounded-2xl bg-zinc-800 hover:bg-zinc-700/50 active:bg-zinc-700/60 ring-1 ring-inset ring-zinc-50/5 transition-colors " + classes}>
+    <div className={"project-card-wrapper " + classes}>
+      <div className="project-card relative p-4 rounded-2xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700/50 active:bg-zinc-300 dark:active:bg-zinc-700/60 ring-1 ring-inset ring-zinc-300/50 dark:ring-zinc-50/5 transition-all duration-300 shadow-sm dark:shadow-none">
 
       <figure className="img-box aspect-square rounded-lg mb-4">
         <img src={imgSrc} alt={title} loading="lazy" className="img-cover" />
@@ -20,13 +21,13 @@ const ProjectCard = ({ imgSrc, title, projectLink, tags, classes}) => {
       <div className="flex items-center justify-between gap-4">
 
         <div className="">
-          <h3 className="title-1 mb-3">
+          <h3 className="title-1 mb-3 text-zinc-900 dark:text-zinc-50">
             {title}
           </h3>
 
           <div className="flex flex-wrap items-center gap-2">
             {tags.map((label,key) =>(
-                <span key={key} className="h-8 text-sm text-zinc-400 bg-zinc-50/5 grid items-center px-3 rounded-lg">
+                <span key={key} className="h-8 text-sm text-zinc-600 dark:text-zinc-400 bg-zinc-200/80 dark:bg-zinc-50/5 grid items-center px-3 rounded-lg">
                     {label}
                 </span>
             ))}
@@ -48,10 +49,11 @@ const ProjectCard = ({ imgSrc, title, projectLink, tags, classes}) => {
       <a 
        href={projectLink}
        target="_blank"
-       className="absolute inset-0">
+       className="absolute inset-0 z-10">
 
        </a>
 
+      </div>
     </div>
   );
 };

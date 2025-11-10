@@ -27,7 +27,7 @@ import Work from "./components/Work";
 import Reviews from "./components/Reviews";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Background from "./components/Background";
+import Chatbot from "./components/Chatbot";
 
 const App = () => {
   useGSAP(() => {
@@ -62,6 +62,7 @@ const App = () => {
       </main>
 
       <Footer />
+      <Chatbot />
     </ReactLenis>
   );
 };

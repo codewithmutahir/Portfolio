@@ -7,62 +7,117 @@
  * Components
  */
 
-import SkillCard from "./SkillCard";
-
-
+import LogoLoop from "./LogoLoop";
+import { 
+  SiFigma, 
+  SiHtml5, 
+  SiCss3, 
+  SiJavascript, 
+  SiReact, 
+  SiPhp, 
+  SiTailwindcss, 
+  SiBootstrap, 
+  SiWordpress, 
+  SiShopify, 
+  SiNodedotjs, 
+  SiMongodb, 
+  SiExpress,
+  SiNextdotjs,
+  SiPostman,
+  SiDocker,
+  SiGit,
+  SiGithub,
+  SiTypescript,
+  SiFirebase,
+  SiMysql,
+} from "react-icons/si";
 
 const Skill = () => {
-  const skillItem = [
+  const skillLogos = [
     {
-      imgSrc: "/images/figma.svg",
+      icon: SiFigma,
       label: "Figma",
-      desc: "Design tool",
     },
     {
-      imgSrc: "/images/html.svg",
-      label: "HTML",
-      desc: "Website Structure",
+      icon: SiHtml5,
+      label: "HTML5",
     },
     {
-      imgSrc: "/images/css3.svg",
-      label: "CSS",
-      desc: "User Interface",
+      icon: SiCss3,
+      label: "CSS3",
     },
     {
-      imgSrc: "/images/javascript.svg",
+      icon: SiJavascript,
       label: "JavaScript",
-      desc: "Interaction",
     },
     {
-      imgSrc: "/images/react.svg",
+      icon: SiTypescript,
+      label: "TypeScript",
+    },
+    {
+      icon: SiReact,
       label: "React",
-      desc: "Framework",
     },
     {
-      imgSrc: "/images/php.svg",
+      icon: SiNextdotjs,
+      label: "Next.js",
+    },
+    {
+      icon: SiPhp,
       label: "PHP",
-      desc: "Backend + frontend",
     },
     {
-      imgSrc: "/images/tailwindcss.svg",
+      icon: SiTailwindcss,
       label: "TailwindCSS",
-      desc: "User Interface",
     },
     {
-      imgSrc: "/images/bootstrap.svg",
+      icon: SiBootstrap,
       label: "Bootstrap",
-      desc: "User Interface",
     },
     {
-      imgSrc: "/images/wordpress.svg",
+      icon: SiNodedotjs,
+      label: "Node.js",
+    },
+    {
+      icon: SiExpress,
+      label: "Express",
+    },
+    {
+      icon: SiMongodb,
+      label: "MongoDB",
+    },
+    {
+      icon: SiMysql,
+      label: "MySQL",
+    },
+    {
+      icon: SiFirebase,
+      label: "Firebase",
+    },
+    {
+      icon: SiWordpress,
       label: "Wordpress",
-      desc: "CMS",
     },
     {
-      imgSrc: "/images/shopify.svg",
+      icon: SiShopify,
       label: "Shopify",
-      desc: "CMS",
-    }
+    },
+    {
+      icon: SiDocker,
+      label: "Docker",
+    },
+    {
+      icon: SiPostman,
+      label: "Postman",
+    },
+    {
+      icon: SiGit,
+      label: "Git",
+    },
+    {
+      icon: SiGithub,
+      label: "GitHub",
+    },
   ];
 
   return (
@@ -70,25 +125,13 @@ const Skill = () => {
       <div className="container">
         <h2 className="headline-2 reveal-up from">Essential Tools I use</h2>
 
-        <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch]">
+        <p className="text-zinc-600 dark:text-zinc-400 mt-3 mb-8 max-w-[50ch]">
           Discover the powerful tools and technologies I use to create
           exceptional, high-performing websites & applications.
         </p>
 
-        <div className="grid gap-3 grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))]">
-          {
-            skillItem.map(({
-              imgSrc, label, desc
-            }, key) =>(
-             <SkillCard 
-             key={key}
-             imgSrc={imgSrc}
-             label={label}
-             desc={desc}
-             classes="reveal-up"
-             />
-            ))
-          }
+        <div className="reveal-up">
+          <LogoLoop logos={skillLogos} speed={40} className="py-8" />
         </div>
 
       </div>

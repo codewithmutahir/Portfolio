@@ -23,7 +23,7 @@ const ReviewCard = ({
     company
 }) => {
     return(
-        <div className="bg-zinc-800 p-5 rounded-xl min-w-[320px] flex flex-col lg:min-w[420px]">
+        <div className="bg-zinc-100 dark:bg-zinc-800 p-5 rounded-xl min-w-[320px] flex flex-col lg:min-w[420px] ring-1 ring-zinc-300/50 dark:ring-zinc-50/5 shadow-sm dark:shadow-none">
 
             <div className="flex items-center gap-1 mb-3">
                 {
@@ -40,7 +40,7 @@ const ReviewCard = ({
                 }
             </div>
 
-            <p className="text-zinc-400 mb-8">
+            <p className="text-zinc-700 dark:text-zinc-400 mb-8">
                 {content}
             </p>
 
@@ -56,9 +56,9 @@ const ReviewCard = ({
                 </figure>
 
                 <div>
-                    {name}
+                    <span className="text-zinc-900 dark:text-zinc-50">{name}</span>
 
-                    <p className="text-xs text-zinc-400 tracking-wider">
+                    <p className="text-xs text-zinc-600 dark:text-zinc-400 tracking-wider">
                         {company}
                     </p>
                 </div>
