@@ -60,20 +60,50 @@ app.post('/api/chat', async (req, res) => {
       });
     }
 
-    const response = await fetch(
-      'https://router.huggingface.co/v1/chat/completions',
-      {
-        headers: {
-          Authorization: `Bearer ${HF_TOKEN}`,
-          'Content-Type': 'application/json',
-        },
-        method: 'POST',
-        body: JSON.stringify({
-          model: 'openchat/openchat-3.6-8b-20240522:featherless-ai',
+    // Use Groq API (free, fast, no strict rate limits) or Hugging Face as fallback
+    const USE_GROQ = process.env.USE_GROQ === 'true' || !HF_TOKEN;
+    const GROQ_API_KEY = process.env.GROQ_API_KEY;
+    
+    if (USE_GROQ && !GROQ_API_KEY) {
+      return res.status(500).json({ 
+        error: 'Server configuration error: Groq API key not set. Please set GROQ_API_KEY in environment variables.' 
+      });
+    }
+
+    const API_URL = USE_GROQ 
+      ? 'https://api.groq.com/openai/v1/chat/completions'
+      : 'https://router.huggingface.co/v1/chat/completions';
+    
+    const API_KEY = USE_GROQ ? GROQ_API_KEY : HF_TOKEN;
+    
+    // Groq models: llama-3.1-8b-instant, llama-3.1-70b-versatile, mixtral-8x7b-32768, gemma2-9b-it
+    // Using llama-3.1-8b-instant for fast, free responses (similar to OpenChat)
+    const MODEL = USE_GROQ
+      ? process.env.GROQ_MODEL || 'llama-3.1-8b-instant'
+      : 'openchat/openchat-3.6-8b-20240522:featherless-ai';
+
+    const requestBody = USE_GROQ
+      ? {
+          model: MODEL,
           messages: messages,
-        }),
-      }
-    );
+          temperature: 0.7,
+          max_tokens: 2048,
+          top_p: 1,
+          stream: false,
+        }
+      : {
+          model: MODEL,
+          messages: messages,
+        };
+
+    const response = await fetch(API_URL, {
+      headers: {
+        Authorization: `Bearer ${API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify(requestBody),
+    });
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
