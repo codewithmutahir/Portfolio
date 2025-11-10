@@ -441,6 +441,8 @@ SERVICES:
         
         if (response.status === 401) {
           errorMessage = "Authentication failed. The server configuration may be incorrect.";
+        } else if (response.status === 402) {
+          errorMessage = "The AI service subscription has expired or reached its limit. Please contact Mutahir directly through the contact form.";
         } else if (response.status === 429) {
           errorMessage = "The service is currently busy. Please try again in a moment.";
         } else if (response.status === 500) {
