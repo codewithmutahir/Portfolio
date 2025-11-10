@@ -399,7 +399,8 @@ SERVICES:
       ];
 
       // Call our secure backend API instead of directly calling Hugging Face
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+      // Use production URL if available, otherwise fall back to dev URL or localhost
+      const API_URL = import.meta.env.VITE_API_PRODUCTION_URL || import.meta.env.VITE_API_URL || 'http://localhost:3001';
       const response = await fetch(`${API_URL}/api/chat`, {
         headers: {
           "Content-Type": "application/json",

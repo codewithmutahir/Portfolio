@@ -71,22 +71,30 @@ Before deploying the frontend, you need to set the backend API URL.
 #### For Vercel:
 1. Go to your project settings
 2. Navigate to "Environment Variables"
-3. Add:
+3. Add for Production:
    ```
-   VITE_API_URL=https://your-backend-name.railway.app
+   VITE_API_PRODUCTION_URL=https://your-backend-name.railway.app
+   ```
+4. (Optional) Add for Preview/Development:
+   ```
+   VITE_API_URL=http://localhost:3001
    ```
 
 #### For Netlify:
 1. Go to Site settings
 2. Navigate to "Environment variables"
-3. Add:
+3. Add for Production:
    ```
-   VITE_API_URL=https://your-backend-name.railway.app
+   VITE_API_PRODUCTION_URL=https://your-backend-name.railway.app
+   ```
+4. (Optional) Add for other branches:
+   ```
+   VITE_API_URL=http://localhost:3001
    ```
 
 ### Step 2: Deploy Frontend
 
-Deploy your frontend as usual. The frontend will automatically use the `VITE_API_URL` environment variable to connect to your Railway backend.
+Deploy your frontend as usual. The frontend will automatically use the `VITE_API_PRODUCTION_URL` environment variable (or `VITE_API_URL` as fallback) to connect to your Railway backend.
 
 ## Local Development
 
@@ -100,7 +108,10 @@ FRONTEND_URL=http://localhost:5173
 PORT=3001
 
 # Frontend (.env in root - for Vite)
+# For local development
 VITE_API_URL=http://localhost:3001
+# For production (set in Vercel/Netlify dashboard)
+# VITE_API_PRODUCTION_URL=https://your-backend-name.railway.app
 ```
 
 Then run:
@@ -146,12 +157,15 @@ npm run dev         # Frontend only
 ### Frontend Issues
 
 1. **API Connection Errors:**
-   - Verify `VITE_API_URL` is set correctly
+   - Verify `VITE_API_PRODUCTION_URL` is set correctly in production
+   - Verify `VITE_API_URL` is set correctly for development
    - Check that backend URL is accessible
    - Ensure CORS is configured properly on backend
 
 2. **Environment Variables Not Working:**
    - Vite requires `VITE_` prefix for environment variables
+   - Use `VITE_API_PRODUCTION_URL` for production
+   - Use `VITE_API_URL` for development/preview
    - Rebuild frontend after changing environment variables
 
 ## Production Checklist
@@ -160,7 +174,7 @@ npm run dev         # Frontend only
 - [ ] `HF_TOKEN` set in Railway
 - [ ] `FRONTEND_URL` set in Railway
 - [ ] Backend URL copied
-- [ ] `VITE_API_URL` set in frontend deployment platform
+- [ ] `VITE_API_PRODUCTION_URL` set in frontend deployment platform (Vercel/Netlify)
 - [ ] Frontend deployed
 - [ ] Health check endpoint working
 - [ ] Chatbot tested and working

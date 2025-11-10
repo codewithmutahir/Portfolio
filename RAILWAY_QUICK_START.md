@@ -35,7 +35,7 @@ After deployment completes:
 
 ### 6. Update Frontend Environment Variable
 In your frontend deployment (Vercel/Netlify):
-- Add environment variable: `VITE_API_URL=https://your-app.railway.app`
+- Add environment variable for Production: `VITE_API_PRODUCTION_URL=https://your-app.railway.app`
 - Redeploy frontend
 
 ### 7. Test
