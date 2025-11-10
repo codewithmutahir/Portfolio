@@ -243,16 +243,33 @@ const Chatbot = () => {
           'react', 'javascript', 'wordpress', 'php', 'node', 'mongodb', 'nextjs',
           'tailwind', 'css', 'html', 'api', 'frontend', 'backend', 'fullstack',
           'price', 'cost', 'rate', 'availability', 'resume', 'cv', 'github', 'linkedin',
-          'what', 'how', 'when', 'where', 'why', 'who', 'which', 'tell me', 'explain',
-          'show', 'list', 'can you', 'do you', 'does', 'is', 'are', 'was', 'were'
+          'email', 'phone', 'social', 'instagram', 'linkedin', 'karachi', 'pakistan',
+          'age', 'location', 'based', 'from', 'lives', 'resides'
+        ];
+        
+        // Off-topic keywords that should be blocked
+        const offTopicKeywords = [
+          'province', 'sindh', 'punjab', 'balochistan', 'kpk', 'capital', 'city', 'country',
+          'weather', 'temperature', 'population', 'geography', 'history', 'culture',
+          'sports', 'football', 'cricket', 'movie', 'music', 'song', 'artist',
+          'recipe', 'cooking', 'food', 'restaurant', 'hotel', 'travel', 'tourism',
+          'news', 'politics', 'government', 'election', 'president', 'prime minister',
+          'science', 'physics', 'chemistry', 'biology', 'mathematics', 'math',
+          'general knowledge', 'trivia', 'fact', 'information about', 'tell me about',
+          'what is', 'who is', 'where is', 'when did', 'why is', 'how does',
+          'explain', 'define', 'meaning of', 'definition of'
         ];
         
         const isPortfolioRelated = portfolioKeywords.some(keyword => 
           userMessage.toLowerCase().includes(keyword)
         );
+        
+        const isOffTopic = offTopicKeywords.some(keyword => 
+          userMessage.toLowerCase().includes(keyword)
+        );
 
-        // Only block if it's a question/query that's clearly off-topic
-        if (!isPortfolioRelated && userMessage.length > 10) {
+        // Block if it's clearly off-topic OR if it's a question but not portfolio-related
+        if ((isOffTopic || (!isPortfolioRelated && userMessage.length > 10)) && !isPortfolioRelated) {
           setMessages((prev) => [
             ...prev,
             {
@@ -291,10 +308,7 @@ PERSONAL INFORMATION:
 - Experience: 3+ years of professional experience in web and mobile app development
 
 CONTACT INFORMATION (PROVIDE THESE WHEN ASKED):
-- Email 1: siyalsiyal42@gmail.com
 - Email 2: mutharsoomro13@gmail.com
-- Phone 1: +923130387953
-- Phone 2: +923282217923
 - LinkedIn: linkedin.com/in/mutahirhussain
 - Instagram: who_m777
 - GitHub: github.com/codewithmutahir
@@ -307,8 +321,7 @@ EXAMPLES OF CORRECT RESPONSES:
 
 If asked "provide me mutahir contact info" or "mutahir contact info":
 Response: "Mutahir Hussain's contact information:
-- Email: siyalsiyal42@gmail.com and mutharsoomro13@gmail.com
-- Phone: +923130387953 and +923282217923
+- Email: mutharsoomro13@gmail.com
 - LinkedIn: linkedin.com/in/mutahirhussain
 - Instagram: who_m777"
 
