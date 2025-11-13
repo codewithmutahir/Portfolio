@@ -20,6 +20,7 @@ const allowedOrigins = [
   'http://localhost:3000',
   'https://www.mutahir.online',
   'https://mutahir.online',
+  'https://portfolio-git-main-mutahirs-projects.vercel.app/'
   process.env.FRONTEND_URL,
 ].filter(Boolean);
 
