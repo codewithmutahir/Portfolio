@@ -20,8 +20,8 @@ const allowedOrigins = [
   'http://localhost:3000',
   'https://www.mutahir.online',
   'https://mutahir.online',
-  'https://portfolio-git-main-mutahirs-projects.vercel.app/'
-  process.env.FRONTEND_URL,
+  'https://portfolio-git-main-mutahirs-projects.vercel.app',
+  process.env.FRONTEND_URL || 'https://portfolio-git-main-mutahirs-projects.vercel.app',
 ].filter(Boolean);
 
 app.use(cors({
