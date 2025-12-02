@@ -28,6 +28,7 @@ import Reviews from "./components/Reviews";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Chatbot from "./components/Chatbot";
+import SEO from "./components/SEO";
 
 const App = () => {
   useGSAP(() => {
@@ -51,6 +52,11 @@ const App = () => {
 
   return (
     <ReactLenis root>
+      <SEO 
+        title="Mutahir Hussain - Web & Mobile App Developer | Portfolio"
+        description="Professional Web & Mobile App Developer specializing in React, Next.js, Node.js, and modern web technologies. 45+ projects completed. Available for collaboration."
+        canonical="https://mutahir.qzz.io"
+      />
       <Header />
       <main>
         <Hero />

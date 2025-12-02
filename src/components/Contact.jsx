@@ -74,10 +74,7 @@ const Contact = () => {
     <section id="contact" className="section">
       <div className="container lg:grid lg:grid-cols-2 lg:items-stretch">
         <div className="mb-12 lg:mb-0 lg:flex lg:flex-col">
-          <h2
-            className="headline-2 lg:max-w-[12ch] reveal-up
-        "
-          >
+          <h2 className="headline-2 lg:max-w-[12ch] reveal-up">
             Contact me for Collaboration
           </h2>
 

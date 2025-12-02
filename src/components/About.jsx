@@ -18,6 +18,7 @@ const About = () => {
   return (
     <section id="about" className="section">
       <div className="container">
+        <h2 className="sr-only">About Mutahir Hussain</h2>
         <div className="bg-zinc-100/80 dark:bg-zinc-800/50 p-7 rounded-2xl md:p-12 reveal-up ring-1 ring-zinc-300/50 dark:ring-zinc-50/5 shadow-sm dark:shadow-none">
           <p className="text-zinc-700 dark:text-zinc-300 mb-4 md:mb-8 md:text-xl md:max-w-[60ch]">
             Hello! I&apos;m Mutahir Hussain, a passionate Web & Mobile App Developer
@@ -51,7 +52,7 @@ const About = () => {
 
             <img
               src="/images/logo.svg"
-              alt="Logo"
+              alt="Mutahir Hussain Portfolio Logo"
               width={30}
               height={30}
               className="ml-auto md:w-[40px] md:h-[40px]"

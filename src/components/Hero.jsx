@@ -25,7 +25,7 @@ const Hero = () => {
                 src="/images/avatar-1.png"
                 width={40}
                 height={40}
-                alt="Mutahir Hussain portrait"
+                alt="Mutahir Hussain - Web and Mobile App Developer profile picture"
                 className="img-cover"
               />
             </figure>
@@ -39,6 +39,7 @@ const Hero = () => {
             </div>
           </div>
 
+          <h1 className="sr-only">Mutahir Hussain - Web & Mobile App Developer</h1>
           <BlurText
             text="Building Scalable Modern Websites for the Future"
             delay={150}
@@ -73,8 +74,9 @@ const Hero = () => {
               src="/images/hero-banner.png"
               width={656}
               height={800}
-              alt="Mutahir Hussain"
+              alt="Mutahir Hussain - Professional Web Developer showcasing modern web development skills"
               className="w-full"
+              loading="eager"
             />
           </figure>
         </div>

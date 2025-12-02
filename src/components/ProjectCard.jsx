@@ -15,7 +15,12 @@ const ProjectCard = ({ imgSrc, title, projectLink, tags, classes}) => {
       <div className="project-card relative p-4 rounded-2xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700/50 active:bg-zinc-300 dark:active:bg-zinc-700/60 ring-1 ring-inset ring-zinc-300/50 dark:ring-zinc-50/5 transition-all duration-300 shadow-sm dark:shadow-none">
 
       <figure className="img-box aspect-square rounded-lg mb-4">
-        <img src={imgSrc} alt={title} loading="lazy" className="img-cover" />
+        <img 
+          src={imgSrc} 
+          alt={`${title} - Project screenshot by Mutahir Hussain`} 
+          loading="lazy" 
+          className="img-cover" 
+        />
       </figure>
 
       <div className="flex items-center justify-between gap-4">

@@ -84,7 +84,7 @@ const Reviews = () => {
         <div className="container">
 
             <h2 className="headline-2 mb-8 reveal-up">
-            What our customers say
+              What Our Customers Say
             </h2>
 
             <div className="scrub-slide 

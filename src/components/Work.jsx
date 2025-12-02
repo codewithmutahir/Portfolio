@@ -147,7 +147,7 @@ const Work = () => {
       <div className="container">
 
         <h2 className="headline-2 mb-8 reveal-up">
-        My portfolio highlights
+          My Portfolio Highlights
         </h2>
 
         {/* Tabs */}

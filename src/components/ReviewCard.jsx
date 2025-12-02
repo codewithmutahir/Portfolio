@@ -48,7 +48,7 @@ const ReviewCard = ({
                 <figure className="img-box rounded-lg">
                     <img 
                     src={imgSrc}
-                    alt={name} 
+                    alt={`${name} from ${company} - Client testimonial`} 
                     width={44}
                     height={44}
                     loading="lazy"

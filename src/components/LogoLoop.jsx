@@ -31,7 +31,7 @@ const LogoLoop = ({ logos, speed = 50, className = "" }) => {
                 ) : (
                   <img
                     src={logo.imgSrc}
-                    alt={logo.label}
+                    alt={`${logo.label} technology logo - Used by Mutahir Hussain`}
                     className="w-full h-full object-contain logo-bw-filter transition-opacity duration-300 group-hover:opacity-100"
                     loading="lazy"
                   />

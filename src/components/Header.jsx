@@ -28,7 +28,7 @@ const Header = () => {
               src="/images/logo.svg"
               width={40}
               height={40}
-              alt="Mutahir Hussain"
+              alt="Mutahir Hussain Portfolio Logo - Web Developer"
             />
           </a>
         </h1>
