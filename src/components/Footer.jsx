@@ -65,11 +65,20 @@ const Footer = () => {
             </h2>
 
             <ButtonPrimary
-              href="mailto:mutharsoomro13@gmail.com"
+              href="mailto:info@mutahir.qzz.io"
               label="Start project"
               icon="chevron_right"
               classes="reveal-up"
             />
+
+            <div className="mt-4 reveal-up">
+              <a
+                href="mailto:info@mutahir.qzz.io"
+                className="inline-block text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 underline transition-colors"
+              >
+                info@mutahir.qzz.io
+              </a>
+            </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4 lg:pl-20">
